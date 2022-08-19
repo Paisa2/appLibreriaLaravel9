@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('lib_categoria', function (Blueprint $table) {
             $table->increments('cod_categoria');
-            $table->string('description', 100)->unique();//s
+            $table->string('titulo', 100)->unique();//s
         });
     }
 
