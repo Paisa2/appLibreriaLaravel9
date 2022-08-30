@@ -11,9 +11,10 @@
         </tr>
         </thead>
         <tbody>
+            @foreach($sexos as $sexo)
             <tr>
                 <td class="text-center" width="20%">
-                    <a href="" class="btn btn-primary btn-sm shadow-none"
+                    <a href="{{ route('sexos.show', $sexo) }}" class="btn btn-primary btn-sm shadow-none"
                             data-toggle="tooltip" data-placement="top" title="Ver Sexo">
                         <i class="fa fa-book fa-fw text-white"></i></a>
                     </a>
@@ -30,9 +31,10 @@
                         </button>
                     </form>
                 </td>
-                <td scope="row">1</td>
-                <td scope="row">Masculino</td>
+                <td scope="row">{{ $sexo->cod_sexo }}</td>
+                <td scope="row">{{ $sexo->description }}</td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

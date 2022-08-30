@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Sexo;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,9 @@ class SexoController extends Controller
      */
     public function index()
     {
-      //  $sexos = Sexo::all();
-        //return view('sexo.index');
+        $sexos = Sexo::orderBy('cod_sexo', 'DESC')->get();
+        //dd($sexos);
+        return view('sexos.index', ['sexos' => $sexos]);
     }
 
     /**
@@ -46,7 +48,7 @@ class SexoController extends Controller
      */
     public function show(Sexo $sexo)
     {
-        //
+        return view('sexos.show', ['sexos' => $sexo]);
     }
 
     /**
