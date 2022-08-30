@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SexoController;
+//use App\Models\Sexo;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/sexos');
 });
+
+// Route::get('/', [SexoController::class,'index']);
+
+Route::resource('sexos', SexoController::class);
